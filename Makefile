@@ -6,7 +6,7 @@
 #    By: jadithya <jadithya@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 13:48:27 by jadithya          #+#    #+#              #
-#    Updated: 2024/03/27 13:54:39 by jadithya         ###   ########.fr        #
+#    Updated: 2024/03/27 13:55:26 by jadithya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ run :
 	mkdir -p /home/beepboop/containers
 	mkdir -p /home/beepboop/containers/wp
 	mkdir -p /home/beepboop/containers/db
-	docker compose -f ./docker-compose.yml up --build
+	docker compose -f ./compose.yml up --build
 
 build :
 		docker compose build
