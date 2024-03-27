@@ -42,6 +42,8 @@ services:
       - jadi
     volumes:
       - db_storage:/var/lib/mysql
+    env_file:
+      - .env
     restart: on-failure
 
 volumes:
@@ -49,11 +51,11 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/beepboop/containers/wp
+      device: /home/beepboop/data/wp
       o: bind
   db_storage:
     driver: local
     driver_opts:
       type: none
-      device: /home/beepboop/containers/db
+      device: /home/beepboop/data/db
       o: bind
