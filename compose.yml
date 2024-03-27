@@ -29,6 +29,8 @@ services:
       - jadi
     volumes:
       - wp_storage:/var/www/html
+    env_file:
+      - .env
     restart: on-failure
 
   mariadb:

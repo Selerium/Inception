@@ -16,10 +16,10 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 	&& mv wp-cli.phar /usr/local/bin/wp
 
 RUN mv /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
-RUN sed -i "s/database_name_here/wordpress/g" /var/www/html/wp-config.php
-RUN sed -i "s/username_here/jadithya/g" /var/www/html/wp-config.php
-RUN sed -i "s/password_here/password/g" /var/www/html/wp-config.php
-RUN sed -i "s/localhost/mariadb:3306/g" /var/www/html/wp-config.php
+RUN sed -i "s/database_name_here/$DB_NAME/g" /var/www/html/wp-config.php
+RUN sed -i "s/username_here/$DB_USER/g" /var/www/html/wp-config.php
+RUN sed -i "s/password_here/$DB_PASS/g" /var/www/html/wp-config.php
+RUN sed -i "s/localhost/$DB_HOST/g" /var/www/html/wp-config.php
 
 RUN chmod -R 777 /var/www/html \
 	&& chown -R www-data:www-data /var/www/html
