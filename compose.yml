@@ -1,0 +1,57 @@
+version: 3.8
+
+networks:
+  jadi:
+    name: jadi_net
+
+services:
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    ports:
+      - 443:443
+    depends_on:
+      - wordpress
+    networks:
+      - jadi
+    volumes:
+      - wp_storage:/var/www/html
+    restart: on-failure
+
+  wordpress:
+    build: ./wordpress
+    container_name: wordpress
+    ports:
+      - 9000:9000
+    depends_on:
+      - mariadb
+    networks:
+      - jadi
+    volumes:
+      - wp_storage:/var/www/html
+    restart: on-failure
+
+  mariadb:
+    build: ./mariadb
+    container_name: mariadb
+    ports:
+      - 3600:3600
+    networks:
+      - jadi
+    volumes:
+      - db_storage:/var/lib/mysql
+    restart: on-failure
+
+volumes:
+  wp_storage:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/beepboop/containers/wp
+      o: bind
+  db_storage:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/beepboop/containers/db
+      o: bind
