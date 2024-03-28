@@ -44,6 +44,10 @@ services:
       - db_storage:/var/lib/mysql
     env_file:
       - ./srcs/.env
+    environment:
+      - DB_USER=jadithya
+      - DB_PASS=password
+      - DB_ROOT=root
     restart: on-failure
 
 volumes:

@@ -10,7 +10,7 @@ then
 		--dbprefix=$DB_PRE \
 		--allow-root
 
-	sudo -u www-data wp core install --url=https://localhost \
+	sudo -u www-data wp core install --url=https://jadithya.42.fr \
 		--title="$WP_TITLE" \
 		--admin_user=$WP_USER \
 		--admin_password=$WP_PASS \
