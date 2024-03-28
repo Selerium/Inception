@@ -30,7 +30,7 @@ services:
     volumes:
       - wp_storage:/var/www/html
     env_file:
-      - .env
+      - ./srcs/.env
     restart: on-failure
 
   mariadb:
@@ -43,7 +43,7 @@ services:
     volumes:
       - db_storage:/var/lib/mysql
     env_file:
-      - .env
+      - ./srcs/.env
     restart: on-failure
 
 volumes:

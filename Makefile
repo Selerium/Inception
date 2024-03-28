@@ -6,27 +6,15 @@
 #    By: jadithya <jadithya@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 13:48:27 by jadithya          #+#    #+#              #
-#    Updated: 2024/03/28 01:27:09 by jadithya         ###   ########.fr        #
+#    Updated: 2024/03/28 11:43:31 by jadithya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-run:
+start:
 	mkdir -p /home/beepboop/data
 	mkdir -p /home/beepboop/data/wp
 	mkdir -p /home/beepboop/data/db
 	docker compose -f ./compose.yml up --build
-
-build:
-		docker compose -f ./compose.yml build
-
-start:
-		docker compose -f ./compose.yml up
-
-bg:
-		docker compose -f ./compose.yml up -d
-
-stop:
-		docker compose down
 
 clean:
 		docker compose -f compose.yml down -v
