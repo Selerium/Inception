@@ -55,11 +55,11 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/beepboop/data/wp
+      device: /home/jadithya/data/wp
       o: bind
   db_storage:
     driver: local
     driver_opts:
       type: none
-      device: /home/beepboop/data/db
+      device: /home/jadithya/data/db
       o: bind
