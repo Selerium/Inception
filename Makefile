@@ -6,7 +6,7 @@
 #    By: jadithya <jadithya@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 13:48:27 by jadithya          #+#    #+#              #
-#    Updated: 2024/03/28 13:51:31 by jadithya         ###   ########.fr        #
+#    Updated: 2024/03/28 14:16:57 by jadithya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,12 @@ start:
 	mkdir -p /home/beepboop/data/db
 	docker compose -f ./compose.yml up -d --build
 
+stop:
+	docker compose -f compose.yml down
+
 clean:
-		docker compose -f compose.yml down -v
-		docker image rm inception-mariadb
-		docker image rm inception-wordpress
-		docker image rm inception-nginx
-		sudo rm -rf /home/beepboop/data
+	docker compose -f compose.yml down -v
+	docker image rm inception-mariadb
+	docker image rm inception-wordpress
+	docker image rm inception-nginx
+	sudo rm -rf /home/beepboop/data
