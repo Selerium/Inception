@@ -4,7 +4,7 @@ RUN apt update -y --no-install-recommends \
 	&& apt install -y --no-install-recommends wget iputils-ping curl sudo php php-mysql php-fpm mariadb-client ca-certificates \
 	&& rm -rf /var/lib/apt/lists/*
 
-COPY ./www.conf /etc/php/7.4/fpm/pool.d
+COPY ./conf/www.conf /etc/php/7.4/fpm/pool.d
 
 RUN wget https://wordpress.org/latest.tar.gz \
 	&& tar -xzvf latest.tar.gz \
@@ -25,7 +25,7 @@ RUN mkdir -p /run/php
 
 WORKDIR /var/www/html
 
-COPY /set_up_wp.sh /var/www/html
+COPY /tools/set_up_wp.sh /var/www/html
 
 EXPOSE 9000
 
